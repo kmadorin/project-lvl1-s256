@@ -1,4 +1,4 @@
-#! /Users/mac/.nvm/versions/node/v5.2.0/bin/node
+#!/usr/bin/env node
 
 import userName from '../';
 
