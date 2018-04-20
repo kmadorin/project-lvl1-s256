@@ -2,6 +2,8 @@ export const getRandomInt = (min, max) => () => Math.floor(Math.random() * (max 
 
 export const getRandomInt100 = () => getRandomInt(1, 100)();
 
+export const getRandomInt1000 = () => getRandomInt(101, 10000)();
+
 export const getRandomOp = () => {
   const list = ['+', '-', '*'];
   const index = getRandomInt(0, list.length - 1)();
@@ -14,4 +16,21 @@ export const gcd = (a, b) => {
     return gcd(a - b, b);
   }
   return gcd(a, b - a);
+};
+
+export const getBalanced = (num) => {
+  const numArr = num.toString().split('').sort().map(Number);
+
+  const iter = (arr) => {
+    const current = arr;
+    if ((current[current.length - 1] - current[0]) <= 1) {
+      return current.join('');
+    }
+    current[0] += 1;
+    current[current.length - 1] -= 1;
+    current.sort();
+    return iter(current);
+  };
+
+  return iter(numArr);
 };
