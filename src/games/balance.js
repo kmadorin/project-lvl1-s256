@@ -1,7 +1,7 @@
 import game from '../game';
 import { getRandomInt1000, getBalanced } from '../utils';
 
-const intro = 'What is the result of the expression?';
+const intro = 'Balance the given number.';
 
 const question = getRandomInt1000;
 
