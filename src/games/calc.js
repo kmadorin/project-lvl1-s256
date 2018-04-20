@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import game from '../game';
-import { getRandomInt100, getRandomOp } from '../utils'
+import { getRandomInt100, getRandomOp } from '../utils';
 
 const intro = 'What is the result of the expression?';
 
@@ -19,23 +19,23 @@ const ask = (q) => {
 };
 
 const validateAnswer = (value) => {
-  if (!isNaN(parseInt(value, 10))) {
+  if (Number.isInteger(value)) {
     return true;
   }
   return false;
 };
 
-const checkAnswer = (question) => {
-  const op1 = car(car(question));
-  const op2 = cdr(car(question));
-  const operator = cdr(question);
+const checkAnswer = (q) => {
+  const op1 = car(car(q));
+  const op2 = cdr(car(q));
+  const operator = cdr(q);
   switch (operator) {
     case '+':
-      return "" + (op1 + op2);
+      return `${(op1 + op2)}`;
     case '-':
-      return "" + (op1 - op2);
+      return `${(op1 - op2)}`;
     case '*':
-      return "" + (op1 * op2);
+      return `${(op1 * op2)}`;
     default:
       return 'Undefined operator';
   }
@@ -43,8 +43,6 @@ const checkAnswer = (question) => {
 
 const iterationsNumber = 3;
 
-const gameCalc = () => {
-  return game(intro, question, iterationsNumber, ask, validateAnswer, checkAnswer);
-}
+const gameCalc = () => game(intro, question, iterationsNumber, ask, validateAnswer, checkAnswer);
 
 export default gameCalc;

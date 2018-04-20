@@ -1,12 +1,12 @@
 import game from '../game';
-import { getRandomInt100 } from '../utils'
+import { getRandomInt100 } from '../utils';
 
 const intro = 'Answer "yes" if number odd otherwise answer "no".';
 
 const question = getRandomInt100;
 
 const ask = (q) => {
-  console.log(`Question: ${q}`)
+  console.log(`Question: ${q}`);
 };
 
 const validateAnswer = (value) => {
@@ -32,8 +32,6 @@ const checkAnswer = (number) => {
 
 const iterationsNumber = 3;
 
-const gameEven = () => {
-  return game(intro, question, iterationsNumber, ask, validateAnswer, checkAnswer);
-}
+const gameEven = () => game(intro, question, iterationsNumber, ask, validateAnswer, checkAnswer);
 
 export default gameEven;
