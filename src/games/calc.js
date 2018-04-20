@@ -19,7 +19,7 @@ const ask = (q) => {
 };
 
 const validateAnswer = (value) => {
-  if (Number.isInteger(parseInt(value))) {
+  if (Number.isInteger(parseInt(value, 10))) {
     return true;
   }
   return false;

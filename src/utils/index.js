@@ -8,10 +8,10 @@ export const getRandomOp = () => {
   return list[index];
 };
 
-export const gcd = (a,b) => {
+export const gcd = (a, b) => {
   if (a === b) return a;
   if (a > b) {
     return gcd(a - b, b);
   }
   return gcd(a, b - a);
-}
+};

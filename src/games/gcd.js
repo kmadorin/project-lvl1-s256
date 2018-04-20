@@ -8,7 +8,7 @@ const question = () => {
   const op2 = getRandomInt100();
   return {
     op1,
-    op2
+    op2,
   };
 };
 
@@ -17,15 +17,13 @@ const ask = (q) => {
 };
 
 const validateAnswer = (value) => {
-  if (Number.isInteger(parseInt(value))) {
+  if (Number.isInteger(parseInt(value, 10))) {
     return true;
   }
   return false;
 };
 
-const checkAnswer = (q) => {
-  return `${gcd(q.op1, q.op2)}`;
-};
+const checkAnswer = q => `${gcd(q.op1, q.op2)}`;
 
 const iterationsNumber = 3;
 
