@@ -1,13 +1,7 @@
-import game from '../game';
+import engine from '../engine';
 import { getRandomInt1000, getBalanced } from '../utils';
 
 const intro = 'Balance the given number.';
-
-const question = getRandomInt1000;
-
-const ask = (q) => {
-  console.log(`Question: ${q}`);
-};
 
 const validateAnswer = (value) => {
   if (Number.isInteger(parseInt(value, 10))) {
@@ -16,10 +10,27 @@ const validateAnswer = (value) => {
   return false;
 };
 
-const checkAnswer = q => getBalanced(q);
 
 const iterationsNumber = 3;
 
-const gameBalance = () => game(intro, question, iterationsNumber, ask, validateAnswer, checkAnswer);
+const gameBalance = () => {
+  const validateAnswer = (value) => {
+    if (Number.isInteger(parseInt(value, 10))) {
+      return true;
+    }
+    return false;
+  };
+  const checkAnswer = q => getBalanced(q);
 
-export default gameBalance;
+  const q = getRandomInt1000();
+  const question = `${q}`;
+  const correctAnswer = checkAnswer(q);
+
+  return {
+    question,
+    validateAnswer,
+    correctAnswer,
+  }
+}
+
+export default () => engine(intro, gameBalance)
