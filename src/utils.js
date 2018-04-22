@@ -34,3 +34,15 @@ export const getBalanced = (num) => {
 
   return iter(numArr);
 };
+
+export const isPrime = (n) => {
+  const iter = (counter) => {
+    if (counter > n / 2) return true;
+    if (n % counter === 0) return false;
+    if (n % counter > 0) {
+      return iter(counter + 1);
+    }
+    return true;
+  };
+  return iter(2);
+};
