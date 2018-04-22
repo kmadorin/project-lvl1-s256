@@ -1,15 +1,10 @@
-import engine from '../engine';
+import engine from '..';
 import { getRandomInt1000, getBalanced } from '../utils';
 
 const intro = 'Balance the given number.';
 
 const gameBalance = () => {
-  const validateAnswer = (value) => {
-    if (Number.isInteger(parseInt(value, 10))) {
-      return true;
-    }
-    return false;
-  };
+
   const checkAnswer = q => getBalanced(q);
 
   const q = getRandomInt1000();
@@ -18,7 +13,6 @@ const gameBalance = () => {
 
   return {
     question,
-    validateAnswer,
     correctAnswer,
   }
 }

@@ -1,14 +1,8 @@
-import engine from '../engine';
+import engine from '..';
 import { getRandomInt100, getRandomInt } from '../utils';
 
 const intro = 'What number is missing in this progression?';
 const gameProgression = () => {
-  const validateAnswer = (value) => {
-  if (Number.isInteger(parseInt(value, 10))) {
-      return true;
-    }
-    return false;
-  };
 
   const getMemberN = (start, delta, n) => start + (delta * (n - 1));
 
@@ -40,8 +34,7 @@ const gameProgression = () => {
 
   return {
     question: game.progressionString,
-    validateAnswer: validateAnswer,
-    correctAnswer: game.missedNum
+    correctAnswer: game.missedNum,
   }
 }
 

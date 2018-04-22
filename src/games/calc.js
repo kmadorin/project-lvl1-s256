@@ -1,7 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import game from '../game';
 import { getRandomInt100, getRandomOp } from '../utils';
-import engine from '../engine';
+import engine from '..';
 
 const intro = 'What is the result of the expression?';
 
@@ -18,13 +17,6 @@ const gameCalc = () => {
     const op2 = cdr(car(q));
     const operator = cdr(q);
     return `${op1} ${operator} ${op2}`;
-  };
-
-  const validateAnswer = (value) => {
-    if (Number.isInteger(parseInt(value, 10))) {
-      return true;
-    }
-    return false;
   };
 
   const checkAnswer = (q) => {
@@ -49,8 +41,7 @@ const gameCalc = () => {
 
   return {
     question,
-    validateAnswer,
-    correctAnswer
+    correctAnswer,
   }
 }
 

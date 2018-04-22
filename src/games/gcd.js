@@ -1,4 +1,4 @@
-import engine from '../engine';
+import engine from '..';
 import { getRandomInt100, gcd } from '../utils';
 
 const intro = 'Find the greatest common divisor of given numbers.';
@@ -14,13 +14,6 @@ const gameGCD = () => {
     };
   };
 
-  const validateAnswer = (value) => {
-    if (Number.isInteger(parseInt(value, 10))) {
-      return true;
-    }
-    return false;
-  };
-
   const checkAnswer = q => `${gcd(q.op1, q.op2)}`;
 
   const q = getQuestion();
@@ -29,7 +22,6 @@ const gameGCD = () => {
 
   return {
     question,
-    validateAnswer,
     correctAnswer,
   }
 
