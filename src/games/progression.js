@@ -19,12 +19,12 @@ const gameProgression = () => {
       if (counter > length) {
         return {
           progressionString: acc,
-          missedNum: missedNum
+          missedNum: String(missedNum)
         };
       }
 
       if (counter === missedStep) {
-        return iter(counter + 1, `${acc} ..`, `${progressionNum}`);
+        return iter(counter + 1, `${acc} ..`, progressionNum);
       }
 
       return iter(counter + 1, `${acc} ${progressionNum}`, missedNum);
