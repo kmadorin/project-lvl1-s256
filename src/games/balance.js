@@ -3,16 +3,6 @@ import { getRandomInt1000, getBalanced } from '../utils';
 
 const intro = 'Balance the given number.';
 
-const validateAnswer = (value) => {
-  if (Number.isInteger(parseInt(value, 10))) {
-    return true;
-  }
-  return false;
-};
-
-
-const iterationsNumber = 3;
-
 const gameBalance = () => {
   const validateAnswer = (value) => {
     if (Number.isInteger(parseInt(value, 10))) {
